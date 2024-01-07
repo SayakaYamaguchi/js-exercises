@@ -14,14 +14,24 @@
 */
 
 // abs関数
-function abs(num){
-    return Math.abs(num);
+function abs(x){
+    if(x >= 0){
+        return x;
+    }else{
+        return -x;
+    }
 }
+// return Math.abs(num);
 
 // sum関数
-function sum(num1, num2){
-    return num1 + num2;
+function sum(array){
+    let sum = 0;
+    for(let x of array){
+        sum += x;
+    }
+    return sum;
 }
+// sum(primes);
 
 // 階乗
 function factorial(num){

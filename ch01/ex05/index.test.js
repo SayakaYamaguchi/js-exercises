@@ -19,16 +19,20 @@ describe("math", () => {
   // 以下に sum, factorial のテストを記載せよ
 
   describe("sum", () => {
+    it("全て空の値", () => {
+      expect(sum([])).toBe(0);
+    });
+
     it("合計数を返す 正の値+正の値", () => {
-      expect(sum(5,5)).toBe(10);
+      expect(sum([1,2,3,4,5])).toBe(15);
     });
 
     it("合計数を返す 正の値+負の値", () => {
-      expect(sum(-5,6)).toBe(1);
+      expect(sum([-5,7,6])).toBe(8);
     });
 
     it("合計数が返す 0+負の値", () => {
-      expect(sum(-1,-5)).toBe(-6);
+      expect(sum([-1,-5])).toBe(-6);
     });
   });
 
