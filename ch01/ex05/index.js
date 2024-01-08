@@ -51,5 +51,5 @@ if (isES6Module) {
 } else {
   console.log('CommonJS モジュールです。');
 }
-module.exports = { abs, sum, factorial };
-// export default { abs, sum, factorial };
+ module.exports = { abs, sum, factorial };
+ export default { abs, sum, factorial };

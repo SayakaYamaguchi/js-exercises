@@ -38,7 +38,7 @@ const c = a;
 console.log(a, b, c);   // => 0 1 0
 
 // prettier-ignore
-const e = a++;
+const e = a++;          // ここがわからない
 b;
 
 console.log(a, b, e);   // => 1 1 0
