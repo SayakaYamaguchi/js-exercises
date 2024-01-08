@@ -1,5 +1,5 @@
-// import { abs, sum, factorial } from "./index.js";
-const { fib } = require('./index.js');
+import { fib } from "./index.js";
+// const { fib } = require('./index.js');
 
   describe("fib", () => {
     it("fib(0) は `0` の値を返す", () => {

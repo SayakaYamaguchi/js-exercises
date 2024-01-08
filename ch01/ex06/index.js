@@ -6,7 +6,7 @@
 **出題範囲**: 1.3
 */
 
-// abs関数
+// fib関数
 function fib(num){
     if(num <= 0){
         return 0;
@@ -22,4 +22,5 @@ for (let i = 0; i < 10; i++){
     console.log(fib(i));
 }
 */
-module.exports = { fib }
+module.exports = { fib };
+export default { fib };

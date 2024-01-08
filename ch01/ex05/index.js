@@ -43,5 +43,13 @@ function factorial(num){
         return num * factorial(num - 1);
     }
 }
+const filename = 'myModule.js'; // ファイル名を指定
+const isES6Module = filename.endsWith('.mjs');
 
-module.exports = { abs, sum, factorial }
+if (isES6Module) {
+  console.log('ES6 モジュールです。');
+} else {
+  console.log('CommonJS モジュールです。');
+}
+module.exports = { abs, sum, factorial };
+// export default { abs, sum, factorial };

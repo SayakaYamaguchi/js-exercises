@@ -1,5 +1,5 @@
-// import { abs, sum, factorial } from "./index.js";
-const { abs, sum, factorial } = require('./index.js');
+import { abs, sum, factorial } from "./index.js";
+// const { abs, sum, factorial } = require('./index.js');
 
 describe("math", () => {
   describe("abs", () => {
