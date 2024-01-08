@@ -18,7 +18,7 @@ console.log(Infinity - (-Infinity));    // Infinity
 console.log(Infinity * (-Infinity));    // -Infinity
 console.log(Infinity / (-Infinity));    // NaN
 
-// 負の Infinity と 負の Infinity
+// 負の Infinity と 正の Infinity
 console.log((-Infinity) + Infinity);    // NaN
 console.log((-Infinity) - Infinity);    // -Infinity
 console.log((-Infinity) * Infinity);    // -Infinity
