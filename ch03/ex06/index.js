@@ -13,5 +13,3 @@ export function padStart(str, targetLength, padString) {
 export function trim(str) {
   return str.trim();
 }
-
-// module.exports = { mySubstring, mySlice, myPadStart, myTrim };
