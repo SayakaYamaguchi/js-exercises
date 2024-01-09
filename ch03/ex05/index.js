@@ -9,13 +9,13 @@
 
 **出題範囲**: 3.3.3*/
 
-function convertNewline(text) {
-    // LF to CRLF
-    let result = text.replace(/\n/g, '\r\n');
-    // CRLF to LF
-    result = result.replace(/\r\n/g, '\n');
-    return result;
-  }
+export function convertNewline(input) {
+  // LF to CRLF
+  let result = input.replace(/\n/g, '\r\n');
+  // CRLF to LF
+  result = result.replace(/\r\n/g, '\n');
+  return result;
+}
 
-module.exports = { convertNewline };
+// module.exports = { convertNewline };
 // export default { convertNewline };

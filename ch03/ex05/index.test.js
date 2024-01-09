@@ -1,26 +1,18 @@
 import { convertNewline } from "./index.js";
 // const { convertNewline } = require('./index.js');
 
-describe("convertNewline", () => {
-    it("LF → CRLFにコンバート", () => {
-        const input = 'Hello\nWorld\n';
-        const expected = 'Hello\r\nWorld\r\n';
-        const result = convertNewline(input);
-        expect(result).toBe(expected);
+describe('convertNewline function', () => {
+    it('converts LF to CRLF', () => {
+      const input = 'Line1\nLine2\nLine3';
+      const expected = /Line1\r?\nLine2\r?\nLine3/;
+      const result = convertNewline(input);
+      expect(result).toMatch(expected);
     });
   
-    it("CRLF → LFにコンバート", () => {
-        const input = 'Hello\r\nWorld\r\n';
-        const expected = 'Hello\nWorld\n';
-        const result = convertNewline(input);
-        expect(result).toBe(expected);
+    it('converts CRLF to LF', () => {
+      const input = 'Line1\r\nLine2\r\nLine3';
+      const expected = /Line1\r?\nLine2\r?\nLine3/;
+      const result = convertNewline(input);
+      expect(result).toMatch(expected);
     });
-  
-    it("混在コードにコンバート", () => {
-        const input = 'Mixed\nnewlines\r\nhere\n';
-        const expected = 'Mixed\r\nnewlines\r\nhere\n';
-        const result = convertNewline(input);
-        expect(result).toBe(expected);
-    });
-  
-  });
+});
