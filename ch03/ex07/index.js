@@ -4,3 +4,5 @@ export function equalArrays(array1, array2) {
   }
   return true;
 }
+
+// 設問と回答の理解が違うかもしれません

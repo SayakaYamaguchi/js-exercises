@@ -12,9 +12,9 @@
 **出題範囲**: 3.2.4
 */
 
-function CheckNumbersSame(a, b, tolerance = 1e-10){
+export function CheckNumbersSame(a, b, tolerance = 1e-10){
    return (a-b) < tolerance; 
 }
 
-module.exports = { CheckNumbersSame };
-export default { CheckNumbersSame };
+// module.exports = { CheckNumbersSame };
+// export default { CheckNumbersSame };
