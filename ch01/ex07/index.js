@@ -31,5 +31,4 @@ class Point{
  point1.add(point2);
 */
 
-module.exports = Point;
 export default Point;

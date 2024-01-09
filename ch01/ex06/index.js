@@ -7,7 +7,7 @@
 */
 
 // fib関数
-function fib(num){
+export function fib(num){
     if(num <= 0){
         return 0;
     }
@@ -22,5 +22,3 @@ for (let i = 0; i < 10; i++){
     console.log(fib(i));
 }
 */
-module.exports = { fib };
-export default { fib };

@@ -14,7 +14,7 @@
 */
 
 // abs関数
-function abs(x){
+export function abs(x){
     if(x >= 0){
         return x;
     }else{
@@ -24,7 +24,7 @@ function abs(x){
 // return Math.abs(num);
 
 // sum関数
-function sum(array){
+export function sum(array){
     let sum = 0;
     for(let x of array){
         sum += x;
@@ -34,7 +34,7 @@ function sum(array){
 // sum(primes);
 
 // 階乗
-function factorial(num){
+export function factorial(num){
     if( num === 0 || num === 1){
         return 1;
     }else if(num < 0){
@@ -43,13 +43,4 @@ function factorial(num){
         return num * factorial(num - 1);
     }
 }
-const filename = 'myModule.js'; // ファイル名を指定
-const isES6Module = filename.endsWith('.mjs');
 
-if (isES6Module) {
-  console.log('ES6 モジュールです。');
-} else {
-  console.log('CommonJS モジュールです。');
-}
- module.exports = { abs, sum, factorial };
- export default { abs, sum, factorial };
