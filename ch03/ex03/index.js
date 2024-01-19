@@ -13,7 +13,7 @@
 */
 
 export function CheckNumbersSame(a, b, tolerance = 1e-10){
-   return (a-b) < tolerance; 
+   return Math.abs(a-b) < tolerance; 
 }
 
 // module.exports = { CheckNumbersSame };
