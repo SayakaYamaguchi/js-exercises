@@ -16,3 +16,7 @@ describe('convertNewline function', () => {
       expect(result).toMatch(expected);
     });
 });
+
+// LF　　　Linux改行コード　
+// CR+LF　Windows改行コード
+// プログラムはOD関係なく基本LF使った方がいい

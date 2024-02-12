@@ -18,6 +18,7 @@ export function fib(num){
     return fib(num - 1) + fib(num - 2);
 }
 /*
+時間かからない方法
 for (let i = 0; i < 10; i++){
     console.log(fib(i));
 }

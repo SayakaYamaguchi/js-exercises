@@ -8,7 +8,11 @@
 /* eslint-disable */
 for (var i = 0; i < 10; i++) {
     (function () {
+<<<<<<< HEAD
+      i = 100;
+=======
       var i = 100;
+>>>>>>> f80851d32c1cce283bcb7bef8d877db2291050a0
     })();
     console.log(i);
   }
