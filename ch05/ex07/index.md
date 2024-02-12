@@ -1,0 +1,5 @@
+実行結果
+false
+
+説明
+tryでtrueを返しても、tryの後にfinallyが必ず実行される為、finallyのfalseに上書きされる
