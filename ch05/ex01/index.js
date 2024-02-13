@@ -3,10 +3,15 @@
 文ブロックを使って同じ関数内に同じ変数名の const を複数宣言する関数を書きなさい。
 **出題範囲**: 5.2
  */
-const a = 1;
-function test5(){
-    const a=2;
+function test(){
+    {
+        const a = 2;
+        console.log(a);
+    }
+    {
+        const a = 100;
+        console.log(a);
+    }
 }
 
-
-// constは同じスコープ内で同じ変数名は使えないはずでは？
+test();
