@@ -42,8 +42,9 @@ function resize2(params) {
   console.log({ maxWidth, maxHeight });
 }
 
-// const maxObj = {maxWidth:15, maxHeight:30}
-const maxObj = {maxWidth:0, maxHeight:0}
+const maxObj = {maxWidth:15, maxHeight:30}
+// const maxObj = {maxWidth:0, maxHeight:0}
+// const maxObj = {maxWidth:0, maxHeight:undefined}
 //const maxObj = {maxWidth:undefined, maxHeight:undefined}
 
 console.log(maxObj.maxWidth + ':' + maxObj.maxHeight);
