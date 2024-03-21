@@ -40,7 +40,7 @@ expect(JSON.stringify(obj)).toBe(`{"x":1,"y":2,"sum":3}`);
 expect(mock).toHaveBeenCalled();            // .toHaveBeenCalled() Jestテストフレームワークのモック関数が呼び出されたかどうかを検証するマッチャー（matcher）の1つ
 */
 
-
+test("sample test", () => {
 const mock = jest.fn();
 const obj = {
   x: 0,
@@ -60,3 +60,4 @@ obj.y = 2;
 expect(JSON.stringify(obj)).toBe(`{"x":1,"y":2,"sum":3}`);
 expect(mock).toHaveBeenCalled();            // .toHaveBeenCalled() Jestテストフレームワークのモック関数が呼び出されたかどうかを検証するマッチャー（matcher）の1つ
 
+});
