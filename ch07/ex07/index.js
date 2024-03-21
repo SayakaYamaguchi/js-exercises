@@ -1,10 +1,6 @@
 /*
 ## 問題 7.7 💻🧪🖋️
-
 本章で登場した sort 関数について考えてみよう。配列をソートする方法は色々なものが考えられる。例えば以下は「挿入ソート」と呼ばれるソートである。
-
-```js
-```
 
 問題を解決するための計算方法や処理の手順のことを [アルゴリズム](https://ja.wikipedia.org/wiki/%E3%82%BD%E3%83%BC%E3%83%88) と呼ぶ。
 ソートのアルゴリズムには様々なものが存在している ([参考](https://ja.wikipedia.org/wiki/%E3%82%BD%E3%83%BC%E3%83%88))。
@@ -17,26 +13,32 @@
 挿入ソート以外のソート関数を実装しなさい。また実装したアルゴリズムの入力の配列長 `n` に対する時間計算量を O-記法で説明しなさい。
 
 **出題範囲**: 7.8.6.3
-
 */
 
-function sort(
-    array,
-    compare = (lhs, rhs) => (lhs < rhs ? -1 : lhs > rhs ? +1 : 0)
-  ) {
-    // array[0 ... i-1] が常にソート済みになるように処理を進める
-    // (0 <= j < i-1 に対して compare(array[j], array[j + 1]) <= 0 が成り立つ)
-    for (let i = 1; i < array.length; i++) {
-      const v = array[i];
+// バブルソート
+function bubbleSort(array) {
+  const n = array.length;
+  // 要素が1つだけの場合はソート済みとする
+  if (n <= 1) return array;
   
-      // array[i] を array[0 ... i] の適切な場所に挿入する
-      let j = i;
-      while (j > 0 && compare(array[j - 1], v) > 0) {
-        array[j] = array[j - 1];
-        j--;
+  for (let i = 0; i < n - 1; i++) {
+    // 各パスで最大の要素が右端に移動する
+      for (let j = 0; j < n - i - 1; j++) {
+          if (array[j] > array[j + 1]) {
+              // 隣接する要素が順序が逆であれば交換する
+              [array[j], array[j + 1]] = [array[j + 1], array[j]];
+          }
       }
-      array[j] = v;
-    }
-    return array;
   }
-  
+  return array;
+}
+
+// サンプル配列を用意してバブルソートを実行
+const sampleArray = [5, 3, 100, 2, 1, 1];
+console.log("ソート前:", sampleArray);
+console.log("バブルソート後:", bubbleSort(sampleArray));
+
+/*
+O-記法 を用いた 時間計算量
+バブルソートは n 個の要素からなる列をソートするのに掛かる時間はO(n2) 
+*/
