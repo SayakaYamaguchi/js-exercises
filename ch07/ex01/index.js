@@ -6,7 +6,6 @@
 
 // 行列の加算
 export function Addition(matrix1, matrix2){
-//    try{
         if (matrix1.length !== matrix2.length || matrix1[0].length !== matrix2[0].length) { // matrix1の列数とmatrix2の行数が一致していることを確認する
             throw new Error('行と列の数が一致しない')
         }
@@ -19,14 +18,12 @@ export function Addition(matrix1, matrix2){
             }
         }
         return result;                                              // 加算結果の行列を返す
-//    }catch(error){
-//        console.log('行列の加算中にエラーが発生しました');
 }
 
 // 行列の乗算
-export function Multiplication(){
+export function Multiplication(matrix1, matrix2){
 //    try{
-        if (matrix1[0].length !== matrix2.length) {
+        if (matrix1.length !== matrix2.length) {
             throw new Error('行と列の数が一致しない');
         }
         const result = [];                                          // 乗算結果を格納する配列を初期化

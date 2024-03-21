@@ -9,10 +9,7 @@ describe('Matrix Addition', () => {
         [5, 6],
         [7, 8]
       ];
-      const expectedResult = [
-        [6, 8],
-        [10, 12]
-      ];
+      const expectedResult = [ [ 6, 8 ], [ 10, 12 ] ];
       expect(Addition(matrix1, matrix2)).toEqual(expectedResult);
     });
     test('行列の加算：行数に差分あり', () => {
@@ -41,10 +38,7 @@ describe('Matrix Multiplication', () => {
         [7, 8],
         [9, 10]
       ];
-      const expectedResult = [
-        [19, 22],
-        [43, 50],
-      ];
+      const expectedResult = [ [ 25, 28 ], [ 57, 64 ] ];
       expect(Multiplication(matrix1, matrix2)).toEqual(expectedResult);
     });
   
@@ -54,8 +48,8 @@ describe('Matrix Multiplication', () => {
         [3, 4]
       ];
       const matrix2 = [
-        [5, 6, 7],
-        [8, 9, 10]
+        [7, 8, 9],
+        [10, 11, 12]
       ];
       expect(() => {
         Multiplication(matrix1, matrix2);
