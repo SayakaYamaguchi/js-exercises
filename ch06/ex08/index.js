@@ -42,25 +42,30 @@ console.log(merge({x:1},{x:2, y:2},{y:3, z:4}));
 */
 
 export function restrict(target, template){
-    for(let key of Object.keys(target)){
-        if(!(key in template)){
+    for(let key of Object.keys(target)){        // ターゲットオブジェクトのすべてのプロパティをチェック
+        if(!(key in template)){                 // テンプレートオブジェクトに同じ名前のプロパティが存在しない場合は削除
             delete target[key]
         }
-    }
-    return target;
+    }   
+    return target;                              // 変更後のオブジェクトを返す
 };
 
-export function subtract(target, ...sources) {
-    for (let source of sources) {
-        for (let key of Object.keys(source)) {
-            if (key in target) {
-                delete target[key];
+export function subtract(target, ...sources) {  // 指定されたオブジェクトからプロパティを削除する関数
+    for (const source of sources) {             // 各ソースオブジェクトについて繰り返す
+        console.log('source:');
+        console.log(source);
+//        console.log(sources);
+        for (const key in source) {             // ソースオブジェクトのすべてのプロパティをチェック
+            if (source.hasOwnProperty(key)) {   // 存在確認
+                console.log(source);
+                console.log([key]);
+                delete target[key];                    
             }
         }
     }
-    return target;
+    return target;                              // 変更後のオブジェクトを返す
 }
-
+/*
 const obj = { x: 1, y: 2, z: 3 };
 const template = { x: 1, y: 2 };
 restrict(obj, template);
@@ -71,3 +76,4 @@ const source1 = { a: 1, b: 2 };
 const source2 = { b: 2 };
 subtract(obj2, source1, source2);
 console.log(obj2); // 出力: { c: 3 }
+*/
