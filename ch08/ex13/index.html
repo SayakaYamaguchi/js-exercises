@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">	
+document.addEventListener('DOMContentLoaded', function() {
+    // submit ボタンのクリックイベントを監視し、フォームが送信されたときに入力値を取得して f 関数に渡す
+    document.getElementById('submitButton').addEventListener('click', function(event) {
+        event.preventDefault(); // デフォルトのフォーム送信を防ぐ
+
+        function f(input) {
+            const f = new Function(`return "Hello, " + "${input}"`);
+            f();
+            console.log(f());
+        }
+
+        const input = document.getElementById('input1').value; // 入力値を取得
+        f(input); // f 関数に入力値を渡して実行
+
+    });
+});
+
+    </script>
+</head>
+<body>
+    <form name="test">
+        <input type="text" id="input1">
+        <input type="submit" id="submitButton">
+    </form>
+</body>
+</html>
