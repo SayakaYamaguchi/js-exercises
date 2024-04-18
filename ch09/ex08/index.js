@@ -111,84 +111,87 @@ class AlarmClock {
 
 
  */
+
+// 目覚まし時計クラス
+// 目覚まし時計の状態
+const State = [
+  "normal",        // 通常
+  "alarmSet",      // アラームセット中
+  "alarmSounding", // アラーム鳴動中
+  "snoozing"       // スヌーズ中
+];
+
+// イベント時に発生するアクション
+const Action = [
+  "none",        // 何もしない
+  "soundAlarm",  // アラームを鳴らす
+  "stopAlarm"    // アラームを止める
+];
+
 // 目覚まし時計クラス
 export class AlarmClock {
   constructor() {
-    this.state = "normal";  // 初期状態は通常
+    this.state = State[0]; // 初期状態は通常
   }
 
   // アラーム設定イベント
   setAlarm() {
     switch (this.state) {
-      case "normal":
-        this.state = "alarmSet";
-        return "none";
+      case State[0]:
+        this.state = State[1];
+        return Action[0];
       default:
-        return "none";
+        return Action[0];
     }
   }
 
   // アラーム解除イベント
   cancelAlarm() {
     switch (this.state) {
-      case "alarmSet":
-        this.state = "normal";
-        return "none";
-      case "alarmSounding":
-        this.state = "normal";
-        return "stopAlarm";
-      case "snoozing":
-        this.state = "normal";
-        return "none";
+      case State[1]:
+        this.state = State[0];
+        return Action[0];
+      case State[2]:
+        this.state = State[0];
+        return Action[2];
+      case State[3]:
+        this.state = State[0];
+        return Action[0];
       default:
-        return "none";
+        return Action[0];
     }
   }
 
   // アラーム設定時刻到達イベント
   reachedToAlarmTime() {
     switch (this.state) {
-      case "alarmSet":
-        this.state = "alarmSounding";
-        return "soundAlarm";
+      case State[1]:
+        this.state = State[2];
+        return Action[1];
       default:
-        return "none";
+        return Action[0];
     }
   }
 
   // スヌーズイベント
   snooze() {
     switch (this.state) {
-      case "alarmSounding":
-        this.state = "snoozing";
-        return "stopAlarm";
+      case State[2]:
+        this.state = State[3];
+        return Action[2];
       default:
-        return "none";
+        return Action[0];
     }
   }
 
   // スヌーズ設定時間経過イベント
   elapseSnoozeTime() {
     switch (this.state) {
-      case "snoozing":
-        this.state = "alarmSounding";
-        return "soundAlarm";
+      case State[3]:
+        this.state = State[2];
+        return Action[1];
       default:
-        return "none";
+        return Action[0];
     }
   }
 }
-
-/*
-let alarmClock;
-  
-alarmClock = new AlarmClock();
-alarmClock.setAlarm();
-console.log(alarmClock.state);  // .toEqual('alarmSet');
-
-// アラーム鳴動 -> スヌーズ中
-alarmClock.setAlarm();
-alarmClock.reachedToAlarmTime();
-alarmClock.snooze();
-console.log(alarmClock.state);  // .toEqual('alarmSet');
-*/
