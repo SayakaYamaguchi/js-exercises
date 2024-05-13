@@ -22,8 +22,8 @@ describe("daysCalculation", () => {
 //- 'YYYY-MM-DD'形式の日付とロケールを引数で受け取り、その日の曜日をロケールの形式の文字列で返す関数
 describe("dayWeek", () => {
     it("", () => {
-        expect(dayWeek('2024-07-01', 'ja-JP')).toBe(22);
-        expect(dayWeek('2024-05-03', '2024-05-06')).toBe(2);
-        expect(dayWeek('2024-06-01', '2024-05-02')).toBe(0);
+        expect(dayWeek('2024-07-01', 'ja-JP')).toBe("月曜日");
+        expect(dayWeek('2024-05-01', 'ja-JP')).toBe("水曜日");
+        expect(dayWeek('2024-07-01', 'en-US')).toBe("Monday");
     })
 });

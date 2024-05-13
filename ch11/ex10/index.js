@@ -48,7 +48,7 @@ export function dayWeek(inputDate, inputLocale){
 }
 
 const inputDate = '2024-07-01';
-const inputLocale = 'ja-JP'; // ロケールを日本語（日本）に設定
+const inputLocale = 'en-US'; // ロケールを日本語（日本）に設定
 const dayOfWeek = dayWeek(inputDate, inputLocale);
 console.log(`指定された日付の曜日は「${dayOfWeek}」です。`);
 
