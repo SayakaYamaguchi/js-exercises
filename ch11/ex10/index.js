@@ -79,8 +79,6 @@ export function dateObj(){
     let lastMonthStartDate = new Date(year, month - 1, 1, 0, 0, 0, 0);
 
     return(lastMonthStartDate);
-
-
 }
 console.log(dateObj());
 
