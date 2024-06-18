@@ -35,7 +35,7 @@ test('fetchFirstFileSize returns the size of the first file', () => {
     });
 });
 
-// 
+// 空のディレクトリに対して fetchFirstFileSize が null を返すかのテスト
 test('fetchFirstFileSize returns null for empty directory', () => {
   return fetchFirstFileSize(emptyDir)
     .then(size => {
