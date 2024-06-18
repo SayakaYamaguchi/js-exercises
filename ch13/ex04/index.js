@@ -25,27 +25,29 @@ fsPromises
 const fs = require('node:fs/promises');
 const { join } = require('path');
 
-export function fetchFirstFileSize(path) {
-  return fs.readdir(path)
-    .then(files => {
-      if (files.length === 0) {
+// ディレクトリ内の最初のファイルのサイズを返す関数
+export function fetchFirstFileSize(path) { 
+  return fs.readdir(path)       // promise開始　fs.readdir(path): pathディレクトリ内のファイルを読み取る
+    .then(files => {            // fs.readdir(path)が解決（成功）すると、このthenブロックが実行。ディレクトリ内のファイル名の配列を受け取る
+      if (files.length === 0) { // ディレクトリが空の場合nullを返す
         return null;
       }
-      return fs.stat(join(path, files[0]))
-        .then(stats => stats.size);
+      return fs.stat(join(path, files[0]))  // ディレクトリ内の最初のファイルの情報を取得
+        .then(stats => stats.size);         // ファイルのサイズを返す
     })
     .catch(err => {
       throw err;
     });
 }
 
+// ディレクトリ内のすべてのファイルのサイズの合計を返す関数
 export function fetchSumOfFileSizes(path) {
-  return fs.readdir(path)
-    .then(files => {
-      const promises = files.map(file => 
-        fs.stat(join(path, file)).then(stats => stats.size)
+  return fs.readdir(path)     // promise開始　fs.readdir(path): pathディレクトリ内のファイルを読み取とthenブロックが実行。
+    .then(files => {          // .readdir(path)が解決（成功）すると、このthenブロックが実行
+      const promises = files.map(file => // 
+        fs.stat(join(path, file)).then(stats => stats.size)   // 各ファイルのサイズを取得するPromiseの配列を作成
       );
-      return Promise.all(promises).then(sizes => sizes.reduce((total, size) => total + size, 0));
+      return Promise.all(promises).then(sizes => sizes.reduce((total, size) => total + size, 0));   // すべてのファイルサイズを合計
     })
     .catch(err => {
       throw err;
