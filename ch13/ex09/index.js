@@ -142,7 +142,6 @@ async function i3() {
   // 3秒後にwait3によりv = 0
   // await wait3で3秒待機後にlog(v)　0 を出力
   // 
-  // 
   // 図解:
   //  wait1
   // |-----|
@@ -218,50 +217,122 @@ async function i4() {
 async function i5() {
   // NOTE: このコードは期待通りの挙動をすると考えられるだろうか？(典型的なミス)
   // 出力：
-  // 15秒後にCOMPLETED出力
-  // 5秒後に0出力
-  // 9秒後に1出力
+  // 期待通りにはならない
+  // COMPLETED出力
+  // 5秒後に4出力
+  // 9秒後に3出力
   // 12秒後に2出力
-  // 14秒後に3出力
-  // 15秒後に4出力
+  // 14秒後に1出力
+
   // 説明：
-  // p = p.then(() => wait((5 - i) * 1000).then(() => log(i)));ではなく
-  // p.then(wait((5 - i) * 1000).then(() => log(i)));となっており、 
-  // wait((5 - i) * 1000)が即時に評価され、並行して待機が開始
-  // 待機時間の短いPromiseが先に解決され、期待される順序ではなく、待機時間の短いものから順にログが出力
-  
-  let p = Promise.resolve(null);
-  for (let i = 0; i < 5; ++i) {                             // ループ五回
-    p = p.then(wait((5 - i) * 1000).then(() => log(i)));
+  // forループが待機時間をスルーした為  
+  // forを五回回してすぐにreturnでCOMPLETEDを出力
+  // forの中のwait*は非同期に実行されるため、それぞれ指定時間通りに待機して実行
+  // 待機時間の短いものから順にログが出力
+
+  // 図解:
+  // for
+  // |-|
+  //   await wait1()
+  //   |-----|
+  //         log(i) 4
+  //         |-|
+  //       　  await wait2()
+  //   |----------|
+  //              log(v) 3
+  //              |-|
+  //   await wait3()
+  //   |---------------|
+  //                   log(v) 2
+  //                   |-|
+  //   await wait4()
+  //   |--------------------|
+  //                        log(v) 1
+  //                        |-|
+  //   return　
+  //   |-|
+  //      log COMPLETED
+  //      |-|
+
+
+
+  let p = Promise.resolve(null);    // 解決
+  for (let i = 0; i < 5; ++i) {     // 5回ループ
+    // console.log('0' + i);
+    p = p.then(wait((5 - i) * 1000).then(() => log(i)));  // wait*のpromiseが先に作られている為、すぐに待機が始まる
+
+  //　成功例：then に渡される関数が呼び出されるまで wait が呼び出されないため、前の Promise が解決されるまで次の待機時間が始まらない
+  //  p = p.then(() => wait((5 - i) * 1000).then(() => log(i)));  
+
   }
   return p.then(() => log("COMPLETED"));
 }
 //i5();
 
 async function i6() {
-  // NOTE: このコードは期待通りの挙動をすると考えられるだろうか？(典型的なミス)
   // 出力：
-  // 15秒後に4出力
-  // 14秒後に3出力
-  // 12秒後に2出力
-  // 9秒後に1出力
+  // 1秒後に4出力
+  // 2秒後に3出力
+  // 3秒後に2出力
+  // 4秒後に1出力
   // 5秒後に0出力
-  // 15秒後にCOMPLETED出力
+  // 5秒後にCOMPLETED出力
+
   // 説明：
-  // p = p.then(() => wait((5 - i) * 1000).then(() => log(i)));ではなく
-  // p.then(wait((5 - i) * 1000).then(() => log(i)));となっており、 
-  // wait((5 - i) * 1000)が即時に評価され、並行して待機が開始
-  // 待機時間の短いPromiseが先に解決され、期待される順序ではなく、待機時間の短いものから順にログが出力
+  // Promise.allにすべてのpromiseが渡され
+  // すべての待機時間が同時に開始され、最初に完了する Promise から順にログが出力される
+  // 完了後.thenの log("COMPLETED"))が出力される
+
+  // 図解:
+  // Promise.all
+  // |-|
+  //   await wait1()
+  //   |-----|
+  //         log(i) 4
+  //         |-|
+  //       　  await wait2()
+  //   |----------|
+  //              log(v) 3
+  //              |-|
+  //   await wait3()
+  //   |---------------|
+  //                   log(v) 2
+  //                   |-|
+  //   await wait4()
+  //   |--------------------|
+  //                        log(v) 1
+  //                        |-|
+  //   　　　　　　　　　　　　.then
+  //   　　　　　　　　　　　　|-|
+  //      　　　　　　　　　　　 log COMPLETED
+  //    　　　　　　　　　　　　 |-|
   return Promise.all(
     [0, 1, 2, 3, 4].map((i) => wait((5 - i) * 1000).then(() => log(i)))
   ).then(() => log("COMPLETED"));
 }
-i6();
+//　i6();
 
 
 
 async function i7() {
   // NOTE: i8 との比較用
+  // 出力：
+  // 11秒後に10出力
+
+  // 説明：
+  // Promise.all([p1(), p2()])によりp1（p2より1秒遅れて）とp2が平行して実行する
+  // p2、p1の順にloopの数だけおなじ変数vに+1をし、それぞれ5回まわす。
+  // 11秒後に合計数の11を出力
+// p1:2
+// p2:3
+// p1:4
+// p2:5
+// p1:6
+// p2:7
+// p1:8
+// p2:9
+// p1:10
+
   let v = 0;
 
   // 1秒待った後に2秒間隔で value の値を更新
@@ -270,6 +341,7 @@ async function i7() {
     for (let i = 0; i < 5; i++) {
       const next = v + 1;
       v = next;
+//      console.log('p1:'+v);
       await wait2();
     }
   };
@@ -279,6 +351,7 @@ async function i7() {
     for (let i = 0; i < 5; i++) {
       const next = v + 1;
       v = next;
+  //    console.log('p2:'+v);
       await wait2();
     }
   };
@@ -286,10 +359,28 @@ async function i7() {
   await Promise.all([p1(), p2()]);
   log(v);
 }
+//　i7();
 
 async function i8() {
   // NOTE: 複数の非同期処理が1つの変数に対し書き込みを行う場合、読み込みと書き込みの間に await が入るとどうなるだろうか
-  let v = 0;
+  // 出力：
+  // 11秒後に5出力
+
+  // 説明：
+  // Promise.all([p1(), p2()])によりp1（p2より1秒遅れて）とp2が平行して実行する
+  // p2、p1の順にloopの数だけおなじ変数vに+1をし、それぞれ5回まわす。
+  // 11秒後に合計数の11を出力
+// p1:2
+// p2:3
+// p1:4
+// p2:5
+// p1:6
+// p2:7
+// p1:8
+// p2:9
+// p1:10
+
+let v = 0;
 
   const p1 = async () => {
     await wait1();
@@ -297,6 +388,8 @@ async function i8() {
       // NOTE: value の読み込み (value + 1) と書き込み (value = ...) の間に await が...
       const next = v + 1;
       await wait2();
+      console.log('p1:'+v);
+      console.log('p1:'+next);
       v = next;
     }
   };
@@ -305,6 +398,8 @@ async function i8() {
     for (let i = 0; i < 5; i++) {
       const next = v + 1;
       await wait2();
+      console.log('p2:'+v);
+      console.log('p2:'+next);
       v = next;
     }
   };
@@ -312,3 +407,4 @@ async function i8() {
   await Promise.all([p1(), p2()]);
   log(v);
 }
+i8();
