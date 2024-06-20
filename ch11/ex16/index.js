@@ -14,14 +14,42 @@ function retryWithExponentialBackoff(func, maxRetry, callback)
 **出題範囲**: 11.10
 */
 
-export function retryWithExponentialBackoff(func, maxRetry, callback) {
 
+export function retryWithExponentialBackoff(func, maxRetry, callback) {
+    let attempt = 0;
+
+    function executeFunction() {
+        try {
+            if (func()) {
+                callback(true);
+            } else {
+                retry();
+            }
+        } catch (error) {
+            retry();
+        }
+    }
+
+    function retry() {
+        attempt++;
+        if (attempt <= maxRetry) {
+            const delay = Math.pow(2, attempt - 1) * 1000; // attemptは1から始まるので、attempt - 1で待ち時間を計算
+            setTimeout(executeFunction, delay);
+        } else {
+            callback(false);
+            // setTimeout(() => callback(false), Math.pow(2, attempt - 1) * 1000);
+        }
+    }
+
+    executeFunction();
+}
+/*
     function attempt(retryCount) {
         setTimeout(() => {
             try{
                 const result = func();                          // func を実行して結果を取得
                 if (result === true) {                          // func が true or 最大リトライ回数に達した
-                    callback(result);                           // コールバックを呼び出す
+                    callback(true);                             // コールバックを呼び出す
                 } else {                                        // func が falseの場合
                     if(retryCount < maxRetry){                  // リトライ回数がmaxRetry未満の場合
                         attempt(retryCount + 1);                // 実行回数（attempt）に＋1カウントし再帰的に次のリトライを実行
@@ -38,7 +66,7 @@ export function retryWithExponentialBackoff(func, maxRetry, callback) {
             }
         },Math.pow(2, retryCount) * 1000);                      // Math.pow(底, 指数)
     }
-    attempt(0); // 初回リトライ
-}
+    attempt(1); // 初回リトライ
+    */
 
 
