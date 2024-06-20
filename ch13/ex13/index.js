@@ -61,12 +61,14 @@ export function* walk(rootPath){
   
 */
 
+// 非同期ジェネレータ関数として定義
 export async function* walk(rootPath) {
-  // fs.promises.readdir を使用してディレクトリ内のエントリを取得
+  // fs.promises.readdir を使用して指定されたディレクトリのエントリを非同期に読み取り
+  // withFileTypes: true オプションを指定し、各エントリがディレクトリかどうかを判定するための追加情報を取得
   const entries = await fs.promises.readdir(rootPath, { withFileTypes: true });
   // 取得したエントリをループ処理
   for (const entry of entries) {
-     // 各エントリの完全なパスを生成
+     // path.joinで各エントリの完全なパスを生成
       const entryPath = path.join(rootPath, entry.name);
       // エントリがディレクトリかどうかを判定
       const isDirectory = entry.isDirectory();
