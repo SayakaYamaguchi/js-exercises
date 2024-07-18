@@ -1,0 +1,4 @@
+{
+  "name": "<button onclick=Alert('ボタンがクリックされました')>クリックしてください</button>",
+  "age": 50
+}
