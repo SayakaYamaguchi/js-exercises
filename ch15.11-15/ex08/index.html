@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebSocket Example</title>
+  <style>
+    .response {
+      margin-top: 10px;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>WebSocket Request/Response Example</h1>
+  
+  <div>
+    <label>Request 1: <input type="text" id="request1" /></label>
+    <button onclick="sendRequestAndDisplay(1)">Send</button>
+    <div id="response1" class="response"></div>
+  </div>
+
+  <div>
+    <label>Request 2: <input type="text" id="request2" /></label>
+    <button onclick="sendRequestAndDisplay(2)">Send</button>
+    <div id="response2" class="response"></div>
+  </div>
+
+  <div>
+    <label>Request 3: <input type="text" id="request3" /></label>
+    <button onclick="sendRequestAndDisplay(3)">Send</button>
+    <div id="response3" class="response"></div>
+  </div>
+
+  <!-- 外部 JavaScript ファイルの読み込み -->
+  <script src="index.js"></script>
+</body>
+</html>

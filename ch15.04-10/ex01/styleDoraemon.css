@@ -1,0 +1,111 @@
+/*
+.completed {
+  text-decoration: line-through;
+}
+main {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+  */
+  /* style.css */
+/* 背景色をドラえもんを連想させる青色に */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #87ceeb; /* 明るいスカイブルー */
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* ちょっと強めの影を追加 */
+  border: 5px solid #2196f3; /* ドラえもんの青い色をボーダーに */
+}
+
+/* フォームのデザインをドラえもん風に */
+#new-todo-form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+#new-todo {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #f44336; /* 赤いボーダー */
+  border-radius: 4px;
+  background-color: #ffffff; /* 白い背景色 */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #ffeb3b; /* ドラえもんの鈴をイメージした黄色 */
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #fdd835; /* ホバー時に少し濃い黄色 */
+}
+
+ul#todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul#todo-list li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #64b5f6; /* 明るい青のボーダー */
+}
+
+ul#todo-list li:last-child {
+  border-bottom: none;
+}
+
+.view {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.toggle {
+  margin-right: 15px;
+}
+
+.content {
+  flex: 1;
+  color: #2196f3; /* ドラえもんの青色 */
+}
+
+button.destroy {
+  background-color: transparent;
+  border: none;
+  color: #f44336; /* 赤色 */
+  font-size: 20px;
+  cursor: pointer;
+}
+
+button.destroy:hover {
+  color: #d32f2f; /* ホバー時に濃い赤色 */
+}
+
+/* 完了したタスクのスタイル */
+.completed .content {
+  text-decoration: line-through;
+  color: #9e9e9e; /* グレー */
+}

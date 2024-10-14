@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ご登録ありがとうございました。</title>
+    <script src="index.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        th { text-align: left; white-space: nowrap;};
+    </style>
+   <script src="script.js"></script>
+</head>
+<body>
+    <h1>ご登録ありがとうございました。</h1>
+    会員情報、個人情報の登録が完了しました。<br>
+    <h2>お客様情報</h2>
+    <p>
+    <table width="60%">
+        <tbody>
+            <tr>
+                <th>ご利用登録日</th>
+                <td><div id="currentDateTime"></div></td>
+            </tr>
+            <tr>
+                <th>IPアドレス</th>
+                <td><p id="ip-address">IP Address: Loading...</p></td>
+            </tr>
+            <tr>
+                <th>ブラウザ</th>
+                <td><div id="userAgent"></div></td>
+            </tr>
+            <tr>
+                <th>OS</th>
+                <td><div id="platform"></div></td>
+            </tr>
+            <tr>
+                <th>言語</th>
+                <td><div id="languages"></div></td>
+            </tr>
+            <tr>
+                <th>論理プロセッサーコアの数</th>
+                <td><div id="hardwareConcurrency"></div></td>
+            </tr>
+
+        </tbody>
+    </table>
+</p>
+
+    <h2>振込先</h2>
+    <span style="font-size: large;">三菱UFJ銀行　新東京支店　支店番号147<br>
+    ご利用料金　<span style="color: brown; font-weight: bolder; font-size: 150%;">12万4700円</span><br></span>
+    ご利用登録から二日以内にお振込みください
+</body>
+</html>

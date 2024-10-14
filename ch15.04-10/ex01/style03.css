@@ -1,0 +1,120 @@
+/*
+.completed {
+  text-decoration: line-through;
+}
+main {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+  */
+  /* style.css */
+/* style.css */
+
+/* 基本スタイル */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #2b2b2b;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  display: flex;
+  justify-content: center; /* 水平方向のセンタリング */
+  align-items: center; /* 垂直方向のセンタリング（必要に応じて） */
+  min-height: 100vh; /* 垂直方向のセンタリングを有効にするために高さを100%に */
+}
+
+main {
+  width: 600px;
+  padding: 20px;
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 127, 0.5);
+  border: 2px solid #ff1493;
+}
+
+/* フォームのデザインをTIGER & BUNNY風に */
+#new-todo-form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 100%; /* フォームがメインコンテナの幅にフィットするように */
+}
+
+#new-todo {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #32cd32;
+  border-radius: 4px;
+  background-color: #2b2b2b;
+  color: #ffffff;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #ff1493;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #c71585;
+}
+
+ul#todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%; /* リストがメインコンテナの幅にフィットするように */
+}
+
+ul#todo-list li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #32cd32;
+}
+
+ul#todo-list li:last-child {
+  border-bottom: none;
+}
+
+.view {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.toggle {
+  margin-right: 15px;
+}
+
+.content {
+  flex: 1;
+  color: #00ff7f;
+}
+
+button.destroy {
+  background-color: transparent;
+  border: none;
+  color: #ff1493;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+button.destroy:hover {
+  color: #c71585;
+}
+
+/* 完了したタスクのスタイル */
+.completed .content {
+  text-decoration: line-through;
+  color: #808080;
+}

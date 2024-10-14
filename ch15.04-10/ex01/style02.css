@@ -1,0 +1,122 @@
+/*
+.completed {
+  text-decoration: line-through;
+}
+main {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+  */
+  /* style.css */
+/* style.css */
+
+@media (max-width: 600px) {
+  main {
+    width: 100%;
+    margin: 20px;
+    padding: 10px;
+  }
+}
+/* 背景色をメタリックなダークグレーにして、ヒーローのスーツをイメージ */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #2b2b2b; /* メタリックなダークグレー */
+  margin: 0;
+  padding: 0;
+  color: #ffffff; /* 白い文字でエネルギーを表現 */
+}
+
+main {
+  width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #1c1c1c; /* より暗い背景色でメインエリアを際立たせる */
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 127, 0.5); /* 緑の輝きを追加 */
+  border: 2px solid #ff1493; /* バニーのピンク色でボーダーを追加 */
+}
+
+/* フォームのデザインをTIGER & BUNNY風に */
+#new-todo-form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+#new-todo {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #32cd32; /* タイガーの緑色をボーダーに */
+  border-radius: 4px;
+  background-color: #2b2b2b; /* ダークグレーで統一感を持たせる */
+  color: #ffffff;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #ff1493; /* バニーのピンク色 */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #c71585; /* ホバー時に濃いピンク */
+}
+
+ul#todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul#todo-list li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #32cd32; /* タイガーの緑色でボーダーを追加 */
+}
+
+ul#todo-list li:last-child {
+  border-bottom: none;
+}
+
+.view {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.toggle {
+  margin-right: 15px;
+}
+
+.content {
+  flex: 1;
+  color: #00ff7f; /* タイガーの緑色でテキストを強調 */
+}
+
+button.destroy {
+  background-color: transparent;
+  border: none;
+  color: #ff1493; /* バニーのピンク色 */
+  font-size: 20px;
+  cursor: pointer;
+}
+
+button.destroy:hover {
+  color: #c71585; /* ホバー時に濃いピンク */
+}
+
+/* 完了したタスクのスタイル */
+.completed .content {
+  text-decoration: line-through;
+  color: #808080; /* メタリックなグレーで完了を表現 */
+}

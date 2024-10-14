@@ -1,0 +1,1 @@
+(()=>{let t=new BitSet(100);t.insert(10),t.insert(20),t.insert(30),stats.mean([...t])})();

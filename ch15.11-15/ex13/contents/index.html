@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ollama Chat</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        #chat-box { border: 1px solid #ccc; padding: 10px; height: 400px; overflow-y: scroll; }
+        .message { margin: 10px 0; }
+        .user { text-align: right; color: blue; }
+        .bot { text-align: left; color: green; }
+    </style>
+</head>
+<body>
+    <h1>Ollama Chat</h1>
+    <div id="chat-box"></div>
+    <input type="text" id="user-input" placeholder="Type your message here" style="width: 80%;">
+    <button id="send-btn">Send</button>
+
+    <script>
+        const chatBox = document.getElementById('chat-box');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        sendBtn.addEventListener('click', async () => {
+            const userMessage = userInput.value;
+            if (userMessage.trim() === "") return;
+
+            // Display user message
+            chatBox.innerHTML += `<div class="message user">${userMessage}</div>`;
+            userInput.value = "";
+
+            // Send message to backend
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: userMessage })
+            });
+
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder();
+            let botMessage = "";
+
+            // Stream AI response
+            while (true) {
+                const { done, value } = await reader.read();
+                if (done) break;
+                botMessage += decoder.decode(value, { stream: true });
+                chatBox.innerHTML += `<div class="message bot">${botMessage}</div>`;
+                chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll
+            }
+        });
+    </script>
+</body>
+</html>

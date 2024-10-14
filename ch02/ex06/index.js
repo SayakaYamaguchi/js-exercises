@@ -1,0 +1,1 @@
+export const FizzBuzz = () => Array.from({ length: 100 }, (_, i) => (i += 1, (i % 3 === 0 ? "Fizz" : "") + (i % 5 === 0 ? "Buzz" : "") || i)).join("\n");
