@@ -22,12 +22,12 @@
 UNIX系OSやWindowsなどのほとんどのOSは、マルチスレッドに対応している。
 
 ### 6スレッド　node mFib.js 45 6
-Worker 4 execution time: 610.397ms
-Worker 3 execution time: 915.784ms
-Worker 5 execution time: 1.425s
-Worker 0 execution time: 2.191s
-Worker 1 execution time: 3.415s
-Worker 2 execution time: 5.299s
+- Worker 4 execution time: 610.397ms
+- Worker 3 execution time: 915.784ms
+- Worker 5 execution time: 1.425s
+- Worker 0 execution time: 2.191s
+- Worker 1 execution time: 3.415s
+- Worker 2 execution time: 5.299s
 Total execution time: 5.303s
 Fibonacci number: 1836311902
 リソースモニター：19
@@ -35,45 +35,45 @@ Fibonacci number: 1836311902
 
 ### 8スレッド　node mFib.js 45 8
 Process ID: 20060
-Worker 6 execution time: 280.193ms
-Worker 2 execution time: 412.733ms
-Worker 1 execution time: 623.092ms
-Worker 0 execution time: 963.383ms
-Worker 5 execution time: 1.447s
-Worker 7 execution time: 2.227s
-Worker 4 execution time: 3.393s
-Worker 3 execution time: 5.280s
-Total execution time: 5.283s
-Fibonacci number: 1836311902
-リソースモニター：24
+- Worker 6 execution time: 280.193ms
+- Worker 2 execution time: 412.733ms
+- Worker 1 execution time: 623.092ms
+- Worker 0 execution time: 963.383ms
+- Worker 5 execution time: 1.447s
+- Worker 7 execution time: 2.227s
+- Worker 4 execution time: 3.393s
+- Worker 3 execution time: 5.280s
+- Total execution time: 5.283s
+- Fibonacci number: 1836311902
+- リソースモニター：24
 
 
-16スレッド
+### 16スレッド
 Process ID: 428
-Worker 14 execution time: 80.418ms
-Worker 12 execution time: 82.579ms
-Worker 1 execution time: 94.648ms
-Worker 5 execution time: 104.858ms
-Worker 9 execution time: 117.674ms
-Worker 10 execution time: 137.967ms
-Worker 3 execution time: 185.143ms
-Worker 7 execution time: 242.575ms
-Worker 0 execution time: 336.566ms
-Worker 13 execution time: 441.031ms
-Worker 8 execution time: 694.945ms
-Worker 4 execution time: 978.973ms
-Worker 15 execution time: 1.483s
-Worker 11 execution time: 2.194s
-Worker 2 execution time: 3.416s
-Worker 6 execution time: 5.297s
-Total execution time: 5.301s
-Fibonacci number: 1836311902
-リソースモニター：32
+- Worker 14 execution time: 80.418ms
+- Worker 12 execution time: 82.579ms
+- Worker 1 execution time: 94.648ms
+- Worker 5 execution time: 104.858ms
+- Worker 9 execution time: 117.674ms
+- Worker 10 execution time: 137.967ms
+- Worker 3 execution time: 185.143ms
+- Worker 7 execution time: 242.575ms
+- Worker 0 execution time: 336.566ms
+- Worker 13 execution time: 441.031ms
+- Worker 8 execution time: 694.945ms
+- Worker 4 execution time: 978.973ms
+- Worker 15 execution time: 1.483s
+- Worker 11 execution time: 2.194s
+- Worker 2 execution time: 3.416s
+- Worker 6 execution time: 5.297s
+- Total execution time: 5.301s
+- Fibonacci number: 1836311902
+- リソースモニター：32
 
 
-128スレッド
-Total execution time: 6.002s　→　他より時間がかかる。
-Fibonacci number: 1836311902
+### 128スレッド
+- Total execution time: 6.002s　→　他より時間がかかる。
+- Fibonacci number: 1836311902
 
 
 
