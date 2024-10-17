@@ -34,7 +34,6 @@ Fibonacci number: 1836311902
 
 
 ### 8スレッド　node mFib.js 45 8
-Process ID: 20060
 - Worker 6 execution time: 280.193ms
 - Worker 2 execution time: 412.733ms
 - Worker 1 execution time: 623.092ms
@@ -49,23 +48,6 @@ Process ID: 20060
 
 
 ### 16スレッド
-Process ID: 428
-- Worker 14 execution time: 80.418ms
-- Worker 12 execution time: 82.579ms
-- Worker 1 execution time: 94.648ms
-- Worker 5 execution time: 104.858ms
-- Worker 9 execution time: 117.674ms
-- Worker 10 execution time: 137.967ms
-- Worker 3 execution time: 185.143ms
-- Worker 7 execution time: 242.575ms
-- Worker 0 execution time: 336.566ms
-- Worker 13 execution time: 441.031ms
-- Worker 8 execution time: 694.945ms
-- Worker 4 execution time: 978.973ms
-- Worker 15 execution time: 1.483s
-- Worker 11 execution time: 2.194s
-- Worker 2 execution time: 3.416s
-- Worker 6 execution time: 5.297s
 - Total execution time: 5.301s
 - Fibonacci number: 1836311902
 - リソースモニター：32
@@ -78,14 +60,11 @@ Process ID: 428
 
 
 ## PCのCPUスペックと考察
-マシンスペック：13th Gen Intel(R) Core(TM) i5-13400F   2.50 GHz
-
-Intel Core i5-13400F スペック<br>
+マシンスペック：13th Gen Intel(R) Core(TM) i5-13400F   2.50 GHz<br>
 物理コア数: 10コア（6つの高性能コア + 4つの高効率コア）<br>
 論理プロセッサ数（スレッド数）: 16スレッド（高性能コアがHyper-Threading対応）<br>
 
 
-
 128スレッドの場合は6.002sで一番時間がかかった<br>
-物理で16スレッドまでしかない為、スレッドのオーバーヘッドやCPUリソースの限界だったのが限定<br>
+物理で16スレッドまでしかない為、スレッドのオーバーヘッドやCPUリソースの限界だったのが原因<br>
 実行時には、スレッド数を論理プロセッサ数（16スレッド）に近い値に設定するべき<br>
