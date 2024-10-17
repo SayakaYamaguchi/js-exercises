@@ -75,6 +75,7 @@ const server = http.createServer((req, res) => {
   }
 });
 
+
 // サーバーをポート8080で起動
 server.listen(8080, () => {
   console.log('Server running at http://localhost:8080/');
