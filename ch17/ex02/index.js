@@ -1,3 +1,5 @@
+// 途中
+
 import https from 'https';
 import { Buffer } from 'buffer';
 
