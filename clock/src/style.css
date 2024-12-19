@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  @apply bg-custom-gradient;
+  min-height: 100vh;
+}
+:root {
+  --degHour: 0;
+  --degMin: 0;
+  --degSec: 0;
+}
+.clock {
+  width: 500px;
+  height: 500px;
+  background: #ddf6ff;
+  position: relative;
+  border-radius: 50%;
+  margin: auto;
+}
+.h-hand,
+.m-hand,
+.s-hand {
+  position: absolute;
+  transform-origin: bottom;
+  border-radius: 40%;
+}
+.h-hand {
+  width: 16px;
+  height: 160px;
+  background: #999;
+  top: calc(50% - 160px);
+  left: calc(50% - 8px);
+  rotate: var(--degHour);
+}
+.m-hand {
+  width: 10px;
+  height: 220px;
+  background: #999;
+  top: calc(50% - 220px);
+  left: calc(50% - 5px);
+  rotate: var(--degMin);
+}
+.s-hand {
+  width: 4px;
+  height: 200px;
+  background: #0bd;
+  top: calc(50% - 200px);
+  left: calc(50% - 2px);
+  rotate: var(--degSec);
+}
+.s-hand::after {
+  border-radius: 50%;
+  display: block;
+  content: "";
+  width: 30px;
+  height: 30px;
+  background: #0bd;
+  position: absolute;
+  bottom: -15px;
+  left: -15px;
+}
+
+.suggestions {
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+  position: absolute;
+  background: white;
+  width: calc(100% - 22px);
+}
+
+.suggestion {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestion:hover {
+  background: #f0f0f0;
+}
+
+.listbox-options li::marker {
+  display: none;
+}
+
+h1 {
+  font-family: "senobi-gothic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.listbox-options {
+  z-index: 1000; /* 重なり順を高く設定 */
+  position: absolute; /* 必須 */
+}

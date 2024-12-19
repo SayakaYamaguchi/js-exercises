@@ -1,0 +1,62 @@
+[
+  {
+    "id": "g",
+    "teamName": "読売ジャイアンツ",
+    "TN": "巨人",
+    "initial": "巨",
+    "rank": 1,
+    "homeOfficial": "東京ドーム",
+    "homeCommon": "東京ドーム",
+    "league": "CL"
+  },
+  {
+    "id": "t",
+    "teamName": "阪神タイガース",
+    "TN": "阪神",
+    "initial": "神",
+    "rank": 2,
+    "homeOfficial": "阪神甲子園球場",
+    "homeCommon": "甲子園",
+    "league": "CL"
+  },
+  {
+    "id": "db",
+    "teamName": "横浜DeNAベイスターズ",
+    "TN": "DeNA",
+    "initial": "デ",
+    "rank": 3,
+    "homeOfficial": "横浜スタジアム",
+    "homeCommon": "横浜",
+    "league": "CL"
+  },
+  {
+    "id": "c",
+    "teamName": "広島東洋カープ",
+    "TN": "広島",
+    "initial": "広",
+    "rank": 4,
+    "homeOfficial": "MAZDA Zoom-Zoom スタジアム広島",
+    "homeCommon": "マツダ",
+    "league": "CL"
+  },
+  {
+    "id": "s",
+    "teamName": "東京ヤクルトスワローズ",
+    "TN": "ヤクルト",
+    "initial": "ヤ",
+    "rank": 5,
+    "homeOfficial": "明治神宮野球場",
+    "homeCommon": "神宮",
+    "league": "CL"
+  },
+  {
+    "id": "d",
+    "teamName": "中日ドラゴンズ",
+    "TN": "中日",
+    "initial": "中",
+    "rank": 6,
+    "homeOfficial": "バンテリンドーム ナゴヤ",
+    "homeCommon": "バンテリンドーム",
+    "league": "CL"
+  }
+]

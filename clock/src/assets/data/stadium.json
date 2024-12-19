@@ -1,0 +1,108 @@
+[
+  {
+    "stadiumid": "1",
+    "stadiumName": "東京ドーム",
+    "stations": {
+      "station01": {
+        "code": "22758",
+        "name": "水道橋",
+        "Type": "train"
+      },
+      "station02": {
+        "code": "22675",
+        "name": "後楽園",
+        "Type": "train"
+      },
+      "station03": {
+        "code": "22595",
+        "name": "春日",
+        "Type": "train"
+      }
+    }
+  },
+  {
+    "stadiumid": "2",
+    "stadiumName": "阪神甲子園球場",
+    "stations": {
+      "station01": {
+        "code": "27366",
+        "name": "甲子園",
+        "Type": "train"
+      }
+    }
+  },
+  {
+    "stadiumid": "3",
+    "stadiumName": "横浜スタジアム",
+    "stations": {
+      "station01": {
+        "code": "23129",
+        "name": "関内",
+        "Type": "train"
+      },
+      "station02": {
+        "code": "23067",
+        "name": "石川町",
+        "Type": "train"
+      },
+      "station03": {
+        "code": "29482",
+        "name": "日本大通り",
+        "Type": "train"
+      }
+    }
+  },
+  {
+    "stadiumid": "4",
+    "stadiumName": "MAZDA Zoom-Zoom スタジアム広島",
+    "stations": {
+      "station01": {
+        "code": "27366",
+        "name": "広島駅",
+        "Type": "train"
+      }
+    }
+  },
+  {
+    "stadiumid": "5",
+    "stadiumName": "神宮球場",
+    "stations": {
+      "station01": {
+        "code": "22618",
+        "name": "外苑前",
+        "Type": "train"
+      },
+      "station02": {
+        "code": "22710",
+        "name": "信濃町",
+        "Type": "train"
+      },
+      "station03": {
+        "code": "22781",
+        "name": "千駄ヶ谷",
+        "Type": "train"
+      },
+      "station04": {
+        "code": "22781",
+        "name": "千駄ヶ谷",
+        "Type": "train"
+      }
+    }
+  },
+  {
+    "stadiumid": "6",
+    "stadiumName": "バンテリンドーム ナゴヤ",
+    "stations": {
+      "station01": {
+        "code": "29303",
+        "name": "ナゴヤドーム前矢田",
+        "Type": "train"
+      },
+      "station02": {
+        "code": "24844",
+        "name": "大曽根",
+        "Type": "train"
+      }
+    }
+  }
+]

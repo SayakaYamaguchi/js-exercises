@@ -1,0 +1,84 @@
+[
+  {
+    "date": "2024-12-19",
+    "game": {
+      "1": {
+        "homeTeam": "中日",
+        "visitorTeam": "ヤクルト",
+        "stadium": "バンテリンドーム ナゴヤ",
+        "start": "18:00"
+      },
+      "2": {
+        "homeTeam": "阪神",
+        "visitorTeam": "巨人",
+        "stadium": "阪神甲子園球場",
+        "start": "13:00"
+      },
+      "3": {
+        "homeTeam": "広島",
+        "visitorTeam": "DeNA",
+        "stadium": "MAZDA Zoom-Zoom スタジアム広島",
+        "start": "06:00"
+      },
+      "4": {
+        "homeTeam": "日本ハム",
+        "visitorTeam": "オリックス",
+        "stadium": "エスコンフィールドHOKKAIDO",
+        "start": "18:00"
+      },
+      "5": {
+        "homeTeam": "楽天",
+        "visitorTeam": "ソフトバンク",
+        "stadium": "みずほPayPay",
+        "start": "18:00"
+      },
+      "6": {
+        "homeTeam": "ロッテ",
+        "visitorTeam": "西武",
+        "stadium": "ZOZOマリンスタジアム",
+        "start": "18:00"
+      }
+    }
+  },
+  {
+    "date": "2024-12-20",
+    "game": {
+      "1": {
+        "homeTeam": "巨人",
+        "visitorTeam": "ヤクルト",
+        "stadium": "東京ドーム",
+        "start": "18:00"
+      },
+      "2": {
+        "homeTeam": "DeNA",
+        "visitorTeam": "阪神",
+        "stadium": "横浜スタジアム",
+        "start": "18:00"
+      },
+      "3": {
+        "homeTeam": "広島",
+        "visitorTeam": "中日",
+        "stadium": "MAZDA Zoom-Zoom スタジアム広島",
+        "start": "18:00"
+      },
+      "4": {
+        "homeTeam": "西武",
+        "visitorTeam": "楽天",
+        "stadium": "ベルーナドーム",
+        "start": "18:00"
+      },
+      "5": {
+        "homeTeam": "オリックス",
+        "visitorTeam": "ロッテ",
+        "stadium": "京セラドーム大阪",
+        "start": "18:00"
+      },
+      "6": {
+        "homeTeam": "ソフトバンク",
+        "visitorTeam": "日本ハム",
+        "stadium": "みずほPayPay",
+        "start": "18:00"
+      }
+    }
+  }
+]
